@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ec3_navigation"
+    app:startDestination="@id/elementoFragment">
+
+    <fragment
+        android:id="@+id/elementoFragment"
+        android:name="com.idat.ec3.ElementoFragment"
+        android:label="fragment_elemento"
+        tools:layout="@layout/fragment_elemento" >
+        <action
+            android:id="@+id/action_elementoFragment_to_elementosDetailFragment"
+            app:destination="@id/elementosDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritoFragment"
+        android:name="com.idat.ec3.FavoritoFragment"
+        android:label="fragment_favorito"
+        tools:layout="@layout/fragment_favorito" >
+        <action
+            android:id="@+id/action_favoritoFragment_to_elementosDetailFragment"
+            app:destination="@id/elementosDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/informacionFragment"
+        android:name="com.idat.ec3.InformacionFragment"
+        android:label="fragment_informacion"
+        tools:layout="@layout/fragment_informacion" >
+        <action
+            android:id="@+id/action_informacionFragment_to_elementosDetailFragment"
+            app:destination="@id/elementosDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elementosDetailFragment"
+        android:name="com.idat.ec3.ElementosDetailFragment"
+        android:label="fragment_elementos_detail"
+        tools:layout="@layout/fragment_elementos_detail" />
+</navigation>
