@@ -1,7 +1,8 @@
 package com.idat.ec3.response
 
-import com.idat.ec3.PunkApi
+import com.idat.ec3.Beer
+
 
 class PunkApiResponse (
-    val elementos: List<PunkApi>
-    )
+    val punkApiList: List<Beer>
+)

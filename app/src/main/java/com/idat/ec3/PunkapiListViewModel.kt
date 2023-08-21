@@ -10,23 +10,26 @@ import kotlinx.coroutines.launch
 
 class PunkapiListViewModel: ViewModel() {
     val repository = PunkApiRepository()
-    val punkapiList: MutableLiveData<List<PunkApi>> = MutableLiveData<List<PunkApi>>()
+    val punkapiList: MutableLiveData<List<Beer>> = MutableLiveData()
 
     fun getPunkApi1List(){
         val data = getData()
         punkapiList.value = data
     }
 
-    fun getCouponsFromService(){
-        viewModelScope.launch (Dispatchers.IO){
-            val response = repository.getPunk()
-            when(response){
-                is ApiResponse.Error -> {
-                    //colocar error
+    fun getCouponsFromService() {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val response = repository.getPunk()
+                if (response.isNotEmpty()) {
+                    punkapiList.postValue(response)
+                } else {
+                    // Manejar caso de lista vacía si es necesario
                 }
-                is ApiResponse.Success ->{
-                    punkapiList.postValue(response.data.elementos)
-                }
+            } catch (e: Exception) {
+                // Manejar el error aquí
+                val errorMessage = e.message
+                // Hacer algo con el mensaje de error
             }
         }
     }

@@ -24,8 +24,7 @@ class ElementoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    ): View {
         binding = FragmentElementoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -35,15 +34,15 @@ class ElementoFragment : Fragment() {
 
         val adapter = RVpunkapiListAdapter(listOf())
         binding.rvPunkapiList.adapter = adapter
-        binding.rvPunkapiList.layoutManager = GridLayoutManager(requireContext(),2,
-            RecyclerView.VERTICAL,false)
-        viewModel.punkapiList.observe(requireActivity()) {
-            adapter.elementos = it
+        binding.rvPunkapiList.layoutManager = GridLayoutManager(
+            requireContext(), 2,
+            RecyclerView.VERTICAL, false
+        )
+        viewModel.punkapiList.observe(viewLifecycleOwner) {
+            adapter.punkApiList = it
             adapter.notifyDataSetChanged()
         }
         viewModel.getCouponsFromService()
 
     }
-
-
 }
