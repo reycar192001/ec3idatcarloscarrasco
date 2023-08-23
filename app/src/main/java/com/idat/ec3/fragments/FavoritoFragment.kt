@@ -40,7 +40,7 @@ class FavoritoFragment : Fragment() {
         }
 
         binding.rvPunkList.adapter = adapter
-        binding.rvPunkList.layoutManager = GridLayoutManager(requireContext(),2,
+        binding.rvPunkList.layoutManager = GridLayoutManager(requireContext(),1,
             RecyclerView.VERTICAL,false)
         viewModel.favorites.observe(requireActivity()) {
             adapter.punkApiList = it

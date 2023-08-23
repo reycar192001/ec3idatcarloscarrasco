@@ -37,7 +37,5 @@ class FavoritoViewModel(application: Application): AndroidViewModel(application)
     fun getFavorites() {
         fetchFavorites()
     }
-
-
 }
 

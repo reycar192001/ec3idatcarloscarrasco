@@ -30,7 +30,7 @@ class ElementoFragment : Fragment(R.layout.fragment_elemento) {
 
         binding.rvPunkapiList.adapter = adapter
         binding.rvPunkapiList.layoutManager = GridLayoutManager(
-            requireContext(), 2,
+            requireContext(), 1,
             RecyclerView.VERTICAL, false
         )
 

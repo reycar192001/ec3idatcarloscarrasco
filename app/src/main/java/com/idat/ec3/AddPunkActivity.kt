@@ -1,6 +1,5 @@
 package com.idat.ec3
 
-import android.icu.util.ULocale
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -58,4 +57,24 @@ class AddPunkActivity : AppCompatActivity() {
                 }
             }
     }*/
+    fun getData(callback: (List<PunkApiFirebase>) -> Unit) {
+        firestore.collection("punkapi").get()
+            .addOnSuccessListener { querySnapshot ->
+                val punkApiList = mutableListOf<PunkApiFirebase>()
+
+                for (document in querySnapshot.documents) {
+                    val name = document.getString("name") ?: ""
+                    val firstBrewed = document.getString("first_brewed") ?: ""
+                    val tagline = document.getString("tagline") ?: ""
+
+                    val punkApi = PunkApiFirebase(name, firstBrewed, tagline)
+                    punkApiList.add(punkApi)
+                }
+
+                callback(punkApiList)
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Error al obtener datos", Toast.LENGTH_SHORT).show()
+            }
+    }
 }

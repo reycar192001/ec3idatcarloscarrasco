@@ -48,4 +48,5 @@ class PunkApiVH(private val binding: ItemPunkapiBinding): RecyclerView.ViewHolde
         binding.txtEslogan.text = punkApi.tagline
         binding.txtPrimerae.text = punkApi.first_brewed
     }
+
 }
