@@ -1,19 +1,34 @@
 package com.idat.ec3.repository
 
-import com.idat.ec3.Beer
+import com.idat.ec3.PunkApi
+import com.idat.ec3.db.PunkApiDao
 import com.idat.ec3.response.ApiResponse
 import com.idat.ec3.response.PunkApiResponse
 import com.idat.ec3.retrofit.RetrofitInstance
 
-class PunkApiRepository {
+class PunkApiRepository(val punkApiDao: PunkApiDao?=null) {
 
-    suspend fun getPunk(): List<Beer> {
+    suspend fun getPunk(): ApiResponse<List<PunkApi>> {
         return try {
-            val response = RetrofitInstance.getPunkApiService().getPunkApis()
-            response // Devuelve directamente la lista de cervezas
+            val response = RetrofitInstance.punkApiService.getPunkApis()
+            ApiResponse.Success(response)
         } catch (e: Exception) {
-            // Manejar el error y lanzar una excepción personalizada si es necesario
-            throw  e
+            ApiResponse.Error(e)
         }
     }
+
+    suspend fun addFavorite(punkApi: PunkApi){
+        punkApiDao?.let{
+            it.addFavorite(punkApi)
+
+        }
+    }
+    fun getFavorites(): List<PunkApi>{
+        punkApiDao?.let {
+            return  it.getFavorites()
+        }?: kotlin.run {
+            return listOf()
+        }
+    }
+
 }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "370992264671",
+    "project_id": "examen-final-off",
+    "storage_bucket": "examen-final-off.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370992264671:android:6442c8536ab4037a33006a",
+        "android_client_info": {
+          "package_name": "com.idat.ec3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370992264671-b7aodmq4hd3vd5p0n73rdm7aoo43go50.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.idat.ec3",
+            "certificate_hash": "abc26f709535e6ced1219cda514dff9a94f39f05"
+          }
+        },
+        {
+          "client_id": "370992264671-r3hioc3c9n7dc4jcfo95ks9e1bt07sgp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjvkkho_nrFhCApRtEexYovWzC6cBnF_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370992264671-b1ej2ae00pe6ioe28eoc6863019pbotn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

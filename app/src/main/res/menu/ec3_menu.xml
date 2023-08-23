@@ -17,4 +17,10 @@
         android:enabled="true"
         android:icon="@drawable/baseline_info_24"
         android:title="Info"/>
+
+    <item
+        android:id="@+id/cerrarFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_exit"
+        android:title="Exit"/>
 </menu>

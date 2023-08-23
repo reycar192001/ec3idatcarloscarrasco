@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/elementoFragment"
-        android:name="com.idat.ec3.ElementoFragment"
+        android:name="com.idat.ec3.fragments.ElementoFragment"
         android:label="fragment_elemento"
         tools:layout="@layout/fragment_elemento" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritoFragment"
-        android:name="com.idat.ec3.FavoritoFragment"
+        android:name="com.idat.ec3.fragments.FavoritoFragment"
         android:label="fragment_favorito"
         tools:layout="@layout/fragment_favorito" >
         <action
@@ -33,8 +33,21 @@
             app:destination="@id/elementosDetailFragment" />
     </fragment>
     <fragment
+        android:id="@+id/cerrarFragment"
+        android:name="com.idat.ec3.fragments.CerrarSesionFragment"
+        android:label="fragment_cerrar_sesion"
+        tools:layout="@layout/fragment_cerrar_sesion" >
+        <action
+            android:id="@+id/action_informacionFragment_to_elementosDetailFragment"
+            app:destination="@id/elementosDetailFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/elementosDetailFragment"
-        android:name="com.idat.ec3.ElementosDetailFragment"
+        android:name="com.idat.ec3.fragments.ElementosDetailFragment"
         android:label="fragment_elementos_detail"
-        tools:layout="@layout/fragment_elementos_detail" />
+        tools:layout="@layout/fragment_elementos_detail" >
+        <argument
+            android:name="punkapi"
+            app:argType="com.idat.ec3.PunkApi" />
+    </fragment>
 </navigation>

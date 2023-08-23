@@ -1,24 +1,27 @@
-package com.idat.ec3
+package com.idat.ec3.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.idat.ec3.databinding.FragmentElementoBinding
-import com.idat.ec3.databinding.FragmentFavoritoBinding
+import com.idat.ec3.R
 
 
-class FavoritoFragment : Fragment() {
+class CerrarSesionFragment : Fragment() {
 
-    private lateinit var binding: FragmentFavoritoBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentFavoritoBinding.inflate(inflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_cerrar_sesion, container, false)
     }
 
 

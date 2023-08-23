@@ -3,24 +3,28 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
-
-data class Beer(
+@Entity(tableName = "punkapi")
+@Parcelize
+data class PunkApi(
+    @PrimaryKey
     val id: Int,
     val name: String,
     val tagline: String,
+    val description: String,
+    val abv: Double,
     val first_brewed: String,
-    val image_url: String
-)
+    val image_url: String,
+    var isFavorite:Boolean=false
+):Parcelable
 
-fun getData():List<Beer> =
+fun getData():List<PunkApi> =
     listOf(
-        Beer(1,"ssw","nike coupon","Nike Store","50"),
-        Beer(2,"ssw","nike coupon","Nike Store","50"),
-        Beer(3,"ssw","nike coupon","Nike Store","50"),
-        Beer(4,"ssw","nike coupon","Nike Store","50"),
-        Beer(5,"ssw","nike coupon","Nike Store","50"),
-        Beer(6,"ssw","nike coupon","Nike Store","50"),
-        Beer(7,"ssw","nike coupon","Nike Store","50"),
-        Beer(8,"ssw","nike coupon","Nike Store","50")
-
+        PunkApi(1,"ssw","nike coupon","Nike Store",1.1,"vd",""),
+        PunkApi(2,"ssw","nike coupon","Nike Store",1.1,"vd",""),
+        PunkApi(3,"ssw","nike coupon","Nike Store",1.1,"vd",""),
+        PunkApi(4,"ssw","nike coupon","Nike Store",1.1,"vd",""),
+        PunkApi(5,"ssw","nike coupon","Nike Store",1.1,"vd",""),
+        PunkApi(6,"ssw","nike coupon","Nike Store",1.1,"vd",""),
+        PunkApi(7,"ssw","nike coupon","Nike Store",1.1,"vd",""),
+        PunkApi(8,"ssw","nike coupon","Nike Store",1.1,"vd","")
     )
