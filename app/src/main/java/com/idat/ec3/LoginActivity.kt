@@ -11,6 +11,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
@@ -78,9 +80,9 @@ class LoginActivity : AppCompatActivity() {
             binding.btnLogin.isEnabled = validateInputs(binding.tilEmail.editText?.text.toString(),text.toString())
         }
 
-        /*binding.btnGoogle.setOnClickListener{
+        binding.btnGoogle.setOnClickListener{
             signInWithGoogle()
-        }*/
+        }
         binding.btnRegistrar.setOnClickListener {
             accesRegistrar()
         }
@@ -114,6 +116,15 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, "El usuario no se encontro", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    private fun signInWithGoogle() {
+        val googleSignOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken("104955829863481954140")
+            .requestEmail().build()
+        val client : GoogleSignInClient = GoogleSignIn.getClient(this,googleSignOptions)
+        val intent= client.signInIntent
+        googleLauncher.launch(intent)
+
     }
 
     private fun validateInputs(email:String,password: String):Boolean{
