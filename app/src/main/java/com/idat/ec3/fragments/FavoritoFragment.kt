@@ -38,6 +38,7 @@ class FavoritoFragment : Fragment() {
             findNavController().navigate(punkDetailDirection)
 
         }
+
         binding.rvPunkList.adapter = adapter
         binding.rvPunkList.layoutManager = GridLayoutManager(requireContext(),2,
             RecyclerView.VERTICAL,false)

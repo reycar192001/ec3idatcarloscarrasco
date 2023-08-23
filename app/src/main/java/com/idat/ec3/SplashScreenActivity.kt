@@ -19,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Handler().postDelayed({
             val email: String = sharedPreferences.getString(LoginActivity.EMAIL,"")?:""
             val intent = if (email.isNotEmpty()){
-                Intent(this,MainActivity::class.java)
+                Intent(this,MenuActivity::class.java)
             }else{
                 Intent(this,LoginActivity::class.java)
             }
