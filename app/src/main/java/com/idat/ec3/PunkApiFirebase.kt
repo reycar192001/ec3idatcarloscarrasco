@@ -1,6 +1,6 @@
 package com.idat.ec3
 
-class PunkApiFirebase(
+data class PunkApiFirebase(
     val name: String,
     val first_brewed: String,
     val tagline: String

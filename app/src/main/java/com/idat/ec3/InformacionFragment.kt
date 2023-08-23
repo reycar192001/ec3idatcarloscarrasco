@@ -42,7 +42,7 @@ class InformacionFragment : Fragment() {
         // Configura un GridLayoutManager para el RecyclerView
         binding.rvPunkapiListfirebase.layoutManager = GridLayoutManager(
             requireContext(),
-            2, // Número de columnas en el grid
+            1, // Número de columnas en el grid
             RecyclerView.VERTICAL,
             false
         )

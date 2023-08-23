@@ -28,8 +28,7 @@ class AddPunkActivity : AppCompatActivity() {
                 val punkapi= hashMapOf(
                     "name" to name,
                     "tagline" to tagline,
-                    "first_brewed" to first_brewed,
-                    "date" to Timestamp.now()
+                    "first_brewed" to first_brewed
                 )
                 firestore.collection("punkapi")
                     .add(punkapi)
